@@ -32,7 +32,7 @@ typedef enum
 static const char* TUTORIAL_TEXTURE[TUTORIAL_MAX] =   //チュートリアルのテクスチャの設定
 {
 	"date\\TEXTURE\\hirata.jpg",
-	"date\\TEXTURE\\hirata.jpg",
+	"date\\TEXTURE\\Tutorial111.png",
 	"date\\TEXTURE\\hirata.jpg",
 	"date\\TEXTURE\\hirata.jpg",
 };

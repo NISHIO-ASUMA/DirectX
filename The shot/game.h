@@ -20,11 +20,12 @@ typedef enum
 }GAMESTATE;
 
 //プロト
-void InitGame(void);//タイトルの初期化
-void UninitGame(void);//タイトルの終了
-void UpdateGame(void);//タイトルの更新
-void DrawGame(void);//タイトルの描画
+void InitGame(void);//ゲームの初期化
+void UninitGame(void);//ゲームの終了
+void UpdateGame(void);//ゲームの更新
+void DrawGame(void);//ゲームの描画
 void SetGamestate(GAMESTATE state);
 GAMESTATE GetGameState(void);
+void SetEnablePause(bool bPause);//ポーズメニュー
 
 #endif

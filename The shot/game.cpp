@@ -18,10 +18,12 @@
 #include "title.h"
 #include "tutorial.h"
 #include "effect.h"
+#include "pause.h"
 
 //グローバル
 GAMESTATE g_gameState = GAMESTATE_NONE;//ゲーム状態
 int g_nCounterGameState = 0;//状態管理カウンター
+bool g_bPause = false;//ポーズ中かどうか
 
 //===================
 //ゲームの初期化
@@ -49,6 +51,7 @@ void InitGame(void)
 
 	g_gameState = GAMESTATE_NORMAL;//通常状態
 	g_nCounterGameState = 0;
+	g_bPause = false;//ポーズ画面の初期化(ポーズ解除)
 }
 //===================
 //ゲームの終了
@@ -79,22 +82,6 @@ void UpdateGame(void)
 {
 	int nNum;//敵をカウント
 
-	UpdateBackground();//背景
-
-	UpdatePlayer();//プレイヤー
-
-	UpdateBullet();//弾
-
-	UpdateEnemy();//敵
-
-	UpdateExplosion();//爆発
-
-	UpdateScore();//スコア更新
-
-	UpdateItem();//アイテム
-
-	UpdateEffect();//エフェクト
-
 	//プレイヤーの取得
 	Player* pPlayer = GetPlayer();
 
@@ -120,6 +107,38 @@ void UpdateGame(void)
 			SetFade(MODE_RESULT);
 		}
 		break;
+	}
+	if (KeyboardTrigger(DIK_P) == true)
+	{
+		//pが押された
+		g_bPause = g_bPause ? false : true;
+	}
+	
+	if (g_bPause == true)
+	{
+		//ポーズ中
+		//ポーズの更新処理
+		UpdatePause();
+	}
+	else 
+	{
+		//ポーズ中で無ければ
+
+		UpdateBackground();//背景
+
+		UpdatePlayer();//プレイヤー
+
+		UpdateBullet();//弾
+
+		UpdateEnemy();//敵
+
+		UpdateExplosion();//爆発
+
+		UpdateScore();//スコア更新
+
+		UpdateItem();//アイテム
+
+		UpdateEffect();//エフェクト
 	}
 }
 //===================
@@ -148,7 +167,22 @@ void DrawGame(void)
 	//アイテム
 	DrawItem();
 
+	//エフェクト
 	DrawEffect();
+
+	if (g_bPause == true)
+	{
+		//ポーズ中
+		//ポーズの描画
+		DrawPause();
+	}
+}
+//=====================
+//ポーズの有効無効設定
+//=====================
+void SetEnablePause(bool bPause)
+{
+	g_bPause = bPause;
 }
 //=====================
 //げーむ状態設定

@@ -174,7 +174,7 @@ void DrawScore(void)
 //==========================
 void SetScore(int nScore)
 {
-	int aPosTexU[MAX_NUM_SCORE];//Œ…”•ª‚Ì”Žš‚ðŠi”[
+	int aPosTexU[MAX_NUM_SCORE] = {};//Œ…”•ª‚Ì”Žš‚ðŠi”[
 	int aData = 10000000;
 	int aData2 = 1000000;
 
@@ -186,14 +186,16 @@ void SetScore(int nScore)
 	//’¸“_ƒoƒbƒtƒ@‚ðƒƒbƒN‚µ,’¸“_î•ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ðŽæ“¾
 	g_pVtxBuffScore->Lock(0, 0, (void**)&pVtx, 0);
 
+
 	for (int nCntscore = 0; nCntscore < MAX_NUM_SCORE; nCntscore)
 	{
-		if (aPosTexU[nCntscore] == aPosTexU[0])
+		if ( nCntscore == 0)//0”Ô–Ú‚ÌŽž
 		{
 			aPosTexU[0] = g_nScore / aData;
 		}
 		else
 		{
+			//0”Ô–ÚˆÈŠO‚ÌŽž
 			aPosTexU[nCntscore] = g_nScore % aData / aData2;
 			aData = aData / 10;
 			aData2 = aData2 / 10;
@@ -216,7 +218,7 @@ void SetScore(int nScore)
 //========================
 void AddScore(int nValue)
 {
-	int aPosTexU[MAX_NUM_SCORE];//ŠeŒ…‚Ì”Žš‚ðŠi”[
+	int aPosTexU[MAX_NUM_SCORE] = {};//ŠeŒ…‚Ì”Žš‚ðŠi”[
 	int aData = 10000000;
 	int aData2 = 1000000;
 
@@ -230,12 +232,13 @@ void AddScore(int nValue)
 
 	for (int nCntscore = 0; nCntscore < MAX_NUM_SCORE; nCntscore++)
 	{
-		if (aPosTexU[nCntscore] == aPosTexU[0])
+		if (nCntscore == 0)//0”Ô–Ú‚¾‚Á‚½‚ç
 		{
 			aPosTexU[0] = g_nScore / aData;
 		}
 		else
 		{
+			//0”Ô–ÚˆÈŠO‚ÌŽž
 			aPosTexU[nCntscore] = g_nScore % aData / aData2;
 			aData = aData / 10;
 			aData2 = aData2 / 10;

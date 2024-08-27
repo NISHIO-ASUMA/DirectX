@@ -112,6 +112,9 @@ void InitTutorial(void)
 	}
 	SetTutorial(TUTORIAL_FIRST, D3DXVECTOR3(190.0f, 350.0f, 0.0f));//チュートリアル1
 	SetTutorial(TUTORIAL_SECOND, D3DXVECTOR3(1030.0f, 680.0f, 0.0f));//チュートリアル2
+	//アンロック
+	g_pVtxBuffTutorial->Unlock();
+
 }
 //====================
 //チュートリアルの終了
@@ -212,7 +215,7 @@ void SetTutorial(int nType, D3DXVECTOR3 pos)
 {
 	VERTEX_2D* pVtx;//頂点情報のポインタ
 
-//頂点バッファをロックし,頂点情報へのポインタを取得
+	//頂点バッファをロックし,頂点情報へのポインタを取得
 	g_pVtxBuffTutorial->Lock(0, 0, (void**)&pVtx, 0);
 
 	for (int nCnt = 0; nCnt < MAX_TUTORIAL; nCnt++)

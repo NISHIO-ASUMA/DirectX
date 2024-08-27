@@ -1,0 +1,53 @@
+#============================
+#
+#wave1(5体) 実験
+#Author:NISHIO ASUMA
+#
+#============================
+
+SCRIPT			# この行は絶対消さないこと！
+
+#====================================
+#敵の読み込み
+#====================================
+SETENEMY						#1体目の敵情報
+	ENEMYTIPE = 0				#種類(1番目)
+	POS = 100.0f 100.0f 0.0f	#座標
+	LIFE = 2					#体力
+	SIZE = 25.0f 25.0f			#敵の大きさ(X/Y)
+	MOVE = 0.2f 0.0f 0.0f		#敵の動き(X/Y/Z)
+END_SETENEMY
+
+SETENEMY						#2体目の敵情報
+	ENEMYTIPE = 0				#種類(1番目)
+	POS = 200.0f 100.0f 0.0f	#座標
+	LIFE = 2					#体力
+	SIZE = 25.0f 25.0f			#敵の大きさ(X/Y)
+	MOVE = 0.2f 0.0f 0.0f		#敵の動き(X/Y/Z)
+END_SETENEMY
+
+SETENEMY						#3体目の敵情報
+	ENEMYTIPE = 0				#種類(1番目)
+	POS = 300.0f 100.0f 0.0f	#座標
+	LIFE = 2					#体力
+	SIZE = 25.0f 25.0f			#敵の大きさ(X/Y)
+	MOVE = 0.2f 0.0f 0.0f		#敵の動き(X/Y/Z)
+END_SETENEMY
+
+SETENEMY						#4体目の敵情報
+	ENEMYTIPE = 1				#種類(2番目)
+	POS = 400.0f 100.0f 0.0f	#座標
+	LIFE = 2					#体力
+	SIZE = 25.0f 25.0f			#敵の大きさ(X/Y)
+	MOVE = 0.2f 0.0f 0.0f		#敵の動き(X/Y/Z)
+END_SETENEMY
+
+SETENEMY						#5体目の敵情報
+	ENEMYTIPE = 1				#種類(2番目)
+	POS = 500.0f 100.0f 0.0f	#座標
+	LIFE = 2					#体力
+	SIZE = 25.0f 25.0f			#敵の大きさ(X/Y)
+	MOVE = 0.2f 0.0f 0.0f		#敵の動き(X/Y/Z)
+END_SETENEMY
+
+END_SCRIPT		# この行は絶対消さないこと！

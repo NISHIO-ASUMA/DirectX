@@ -1,2 +1,4 @@
-﻿  score.cpp
+﻿  pause.cpp
+C:\Users\student\source\repos\The shot\pause.cpp(25,6): warning C4101: 'nCntPause': ローカル変数は 1 度も使われていません。
+C:\Users\student\source\repos\The shot\pause.cpp(118,13): warning C4101: 'pVtx': ローカル変数は 1 度も使われていません。
   The shot.vcxproj -> C:\Users\student\source\repos\The shot\Debug\The shot.exe
